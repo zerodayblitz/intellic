@@ -1,0 +1,159 @@
+/* intellic — design tokens
+   one place for every color, size, and value.
+   change it here, it changes everywhere. */
+
+:root {
+
+  /* backgrounds */
+  --bg-primary: #080B0F;
+  --bg-secondary: #0D1117;
+  --bg-tertiary: #131920;
+  --bg-hover: #1A2332;
+
+  /* accent */
+  --accent: #00C2FF;
+  --accent-dark: #0084B4;
+  --accent-glow: rgba(0, 194, 255, 0.15);
+  --accent-subtle: rgba(0, 194, 255, 0.08);
+
+  /* text */
+  --text-primary: #F0F4F8;
+  --text-secondary: #8899AA;
+  --text-muted: #4A5568;
+  --text-accent: #00C2FF;
+
+  /* borders */
+  --border: #1E2D3D;
+  --border-accent: rgba(0, 194, 255, 0.3);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  /* status */
+  --green: #00D4A0;
+  --yellow: #FFB800;
+  --red: #FF4757;
+
+  /* type */
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* size scale */
+  --xs: 0.75rem;
+  --sm: 0.875rem;
+  --base: 1rem;
+  --lg: 1.125rem;
+  --xl: 1.25rem;
+  --2xl: 1.5rem;
+  --3xl: 1.875rem;
+  --4xl: 2.25rem;
+  --5xl: 3rem;
+  --6xl: 3.75rem;
+
+  /* spacing scale */
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s6: 1.5rem;
+  --s8: 2rem;
+  --s10: 2.5rem;
+  --s12: 3rem;
+  --s16: 4rem;
+  --s20: 5rem;
+  --s24: 6rem;
+
+  /* layout */
+  --max-w: 1280px;
+  --sidebar-w: 260px;
+  --nav-h: 64px;
+
+  /* radius */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-full: 9999px;
+
+  /* shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+  --shadow-accent: 0 0 20px rgba(0,194,255,0.2);
+
+  /* glass */
+  --glass-bg: rgba(13,17,23,0.7);
+  --glass-border: rgba(255,255,255,0.06);
+  --glass-blur: blur(12px);
+
+  /* transitions */
+  --t-fast: 150ms ease;
+  --t-base: 250ms ease;
+  --t-slow: 400ms ease;
+
+  /* gradients */
+  --grad-accent: linear-gradient(135deg, #00C2FF 0%, #0084B4 100%);
+  --grad-hero: linear-gradient(180deg, #080B0F 0%, #0D1520 100%);
+  --grad-card: linear-gradient(135deg, #0D1117 0%, #131920 100%);
+  --grad-vanish: linear-gradient(135deg, #00C2FF 0%, #0066FF 100%);
+  --grad-uncover: linear-gradient(135deg, #FF4757 0%, #FF6B35 100%);
+  --grad-shimmer: linear-gradient(90deg, transparent 0%, rgba(0,194,255,0.1) 50%, transparent 100%);
+
+  /* light theme raw values, swapped in below */
+  --bg-primary-lt: #F8FAFC;
+  --bg-secondary-lt: #FFFFFF;
+  --bg-tertiary-lt: #EEF2F7;
+  --bg-hover-lt: #E2E8F0;
+  --text-primary-lt: #0D1117;
+  --text-secondary-lt: #4A5568;
+  --text-muted-lt: #A0AEC0;
+  --border-lt: #CBD5E0;
+  --border-subtle-lt: rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] {
+  --bg-primary: var(--bg-primary-lt);
+  --bg-secondary: var(--bg-secondary-lt);
+  --bg-tertiary: var(--bg-tertiary-lt);
+  --bg-hover: var(--bg-hover-lt);
+  --text-primary: var(--text-primary-lt);
+  --text-secondary: var(--text-secondary-lt);
+  --text-muted: var(--text-muted-lt);
+  --border: var(--border-lt);
+  --border-subtle: var(--border-subtle-lt);
+  --glass-bg: rgba(255,255,255,0.7);
+  --glass-border: rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--base);
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--t-base), color var(--t-base);
+}
+
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+a:hover { color: var(--accent); }
+
+img { max-width: 100%; display: block; }
+
+button { cursor: pointer; font-family: var(--font); }
